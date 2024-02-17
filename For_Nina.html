@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nina ❤️</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #FF0000; 
+    margin-top: 20px;
+  }
+  .date {
+    font-size: 24px; 
+    text-decoration: underline; 
+    display: inline-block;
+    margin: 20px auto; 
+    padding: 10px;
+    border: 2px solid #FF0000; 
+  }
+  .message {
+    font-weight: bold;
+    font-size: 20px; 
+    margin-top: 40px; 
+  }
+  #timer {
+    font-weight: bold;
+    font-size: 28px; 
+    margin-top: 20px;
+  }
+  .days {
+    font-size: 36px;
+  }
+  .final-message {
+    font-style: italic; 
+    font-size: 20px; 
+    margin-top: 60px; 
+  }
+</style>
+</head>
+<body>
+
+<h2>Dan kada sam dobio priliku da uživam u svakoj sekundi provedenoj sa tobom</h2>
+<div class="date">3 decembar 2023 ❤️</div>
+<div class="message">Brojim od tada svaki sekund koji sam proveo čekajući novu priliku:</div>
+
+<div id="timer"></div>
+
+<div class="final-message">U nadi da ću jednоg dana ponovo osjetiti radost i sreću od susreta sa tobom.</div>
+
+<script>
+  function updateTimer() {
+    const startDate = new Date("December 3, 2023 00:00:00").getTime();
+    const now = new Date().getTime();
+    const distance = now - startDate;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("timer").innerHTML = "<span class='days'>" + days + "d</span> " + hours + "h "
+    + minutes + "m " + seconds + "s";
+  }
+
+  setInterval(updateTimer, 1000); 
+</script>
+
+</body>
+</html>
